@@ -10,14 +10,21 @@ Raspberry Piに、すべての周辺機器を接続し、SDカードをさす。
 
 「OK」をクリックする。
 
-設定画面のうち、「4 Internationalisation Option」をEnterで選択する。
+設定画面のうち、「4 Internationalisation Option」を選択する。
 
-「I2 Change Timezone」をEnterで選択、「Asia」-> 「Tokyo」を順にEnterで選択する。
+「I2 Change Timezone」を選択、「Asia」-> 「Tokyo」を順に選択する。
 
 元の設定画面に戻るまで待つ。
 
-「I3 Change Keyboard Layout」をEnterで選択する。
+「I3 Change Keyboard Layout」を選択する。
 
+「Generic 105-key (Intl) PC」->「Other」->「Japanese」を順に選択する。
+
+「I1 Change Locale」を選択する。
+
+「en_GB.UTF-8 UTF-8」と「ja_JP.UTF-8」と「ja_JP.EUC-JP」に「*」が付くように、該当箇所でスペースキーを押して、タブキーで「Finish」を選択する。
+
+設定画面での設定は終了。
 
 無線LAN設定のため、デスクトップ環境を「startx」で起動する。
 
