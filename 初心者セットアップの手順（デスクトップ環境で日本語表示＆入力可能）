@@ -1,0 +1,54 @@
+公式サイトからNOOBSをダウンロードし、解凍する。
+
+SDカードに、解凍したファイルをすべてコピーする。
+
+Raspberry Piに、すべての周辺機器を接続し、SDカードをさす。
+
+電源をつなぐ。
+
+「Raspbian」にチェックを入れて、「install」をクリックする。
+
+「OK」をクリックする。
+
+設定画面のうち、「4 Internationalisation Option」をEnterで選択する。
+
+「I2 Change Timezone」をEnterで選択、「Asia」-> 「Tokyo」を順にEnterで選択する。
+
+元の設定画面に戻るまで待つ。
+
+「I3 Change Keyboard Layout」をEnterで選択する。
+
+
+無線LAN設定のため、デスクトップ環境を「startx」で起動する。
+
+デスクトップにあるアイコン「Wifi Config」をダブルクリックで起動する。
+
+「wpa-gui」画面の「scan」ボタンをクリックする。
+
+出てきた「Scan Result」の中から接続したいものをクリックする。
+
+「PSK」欄に共有キーを入力し、「Add」ボタンを押す。
+
+「Current Scan」画面に戻る。（戻らない場合は、タブをクリックする。）
+
+無線LANに接続すると、デスクトップ右下に、バルーンで接続完了のメッセージが出て、「Current Scan」画面が「Completed」になる。（ならない場合は、「Connect」ボタンを押す。）
+
+デスクトップ画面の右下にある「logout」ボタンを押す。
+
+コンソールに戻る。
+
+コンソールで、以下コマンドを実行する。
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install uim uim-anthy
+
+設定が終わったので、いったんシャットダウンして、電源を抜く。
+
+再起動のため、電源を入れる。
+
+起動時に、コンソールに「login：」が出たら、「pi」を入力する。その後「password:」が出たら「raspberry」を入力する。
+
+デスクトップ環境を「startx」で起動する。
