@@ -1,0 +1,11 @@
+Pythonをrootで起動しておく
+$sudo python
+
+#準備１　使うよ
+RPi.GPIO.setmode(GPIO.BCM)
+#準備２　出力だよ
+RPi.GPIO.setup(25,GPIO.OUT)
+#点灯
+RPi.GPIO..output(25,True)
+#消灯
+RPi.GPIO..output(25,False)
