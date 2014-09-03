@@ -18,11 +18,11 @@ public class BlinkLED {
 	public static void main(String[] args) {
 		try {
 
-			//Refresh GPIO_CH
+			//もし以前に使った形跡があったら消すよ
 			FileWriter unexport = new FileWriter("/sys/class/gpio/unexport");
+			//準備１　使うよ
 			FileWriter export = new FileWriter("/sys/class/gpio/export");
 
-			// Reset GPIO17
 			File exportFileCheck = new File("/sys/class/gpio/gpio" + GPIO_CH);
 			if (exportFileCheck.exists()) {
 				unexport.write(GPIO_CH);
@@ -32,20 +32,18 @@ public class BlinkLED {
 			export.write(GPIO_CH);
 			export.flush();
 
-			//Direction GPIO_CH
+			//準備２　出力だよ
 			FileWriter direction = new FileWriter("/sys/class/gpio/gpio" + GPIO_CH + "/direction");
 			direction.write(GPIO_OUT);
 			direction.flush();
-
-			// Create GPIO Writer
 			FileWriter command = new FileWriter("/sys/class/gpio/gpio"	+ GPIO_CH + "/value");
 
-			// Brink Write
+			// 点灯と消灯を繰り返す
 			for (int i = 0; i < 100; i++) {
-				command.write(GPIO_ON);
+				command.write(GPIO_ON); //点灯
 				command.flush();
 				Thread.sleep(200);
-				command.write(GPIO_OFF);
+				command.write(GPIO_OFF); //消灯
 				command.flush();
 				Thread.sleep(200);
 			}
