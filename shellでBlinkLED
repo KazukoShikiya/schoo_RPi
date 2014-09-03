@@ -1,9 +1,10 @@
-#準備
+#準備１　使うよ
 sudo echo 25 > /sys/class/gpio/export
+#準備２　出力だよ
 sudo echo out > /sys/class/gpio/gpio25/direction
 #点灯
 sudo echo 1 > /sys/class/gpio/gpio25/value
 #消灯
 sudo echo 0 > /sys/class/gpio/gpio25/value
-#後始末
+#後始末　使い終わったら消すよ
 sudo echo 25 > /sys/class/gpio/unexport
